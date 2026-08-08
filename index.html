@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheets — Gerador de Cheatsheets | sallesfx</title>
+
+    <!-- Fontes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="public/assets/css/theme.css">
+</head>
+
+<body>
+
+    <!-- Top Bar / Header -->
+    <header class="app-header">
+        <a href="https://sallesfx.com.br" class="brand">
+            <span>sallesfx</span> / sheets
+        </a>
+        <div class="header-tag">MVP v1.0</div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="app-container">
+
+        <!-- Painel de Seleção (Formulário) -->
+        <aside class="controls-panel">
+            <h2>Criar Wallpaper</h2>
+
+            <!-- Seletor de Categoria -->
+            <div class="form-group">
+                <label for="category">1. Categoria</label>
+                <select id="category" class="form-select">
+                    <option value="linux">Linux Terminal</option>
+                    <option value="git" disabled>Git & GitHub (Em breve)</option>
+                    <option value="docker" disabled>Docker & Containers (Em breve)</option>
+                </select>
+            </div>
+
+            <!-- Seletor de Subcategoria -->
+            <div class="form-group">
+                <label for="subcategory">2. Conteúdo</label>
+                <select id="subcategory" class="form-select">
+                    <option value="navegacao">Navegação e Arquivos</option>
+                    <option value="redes" disabled>Administração de Redes</option>
+                    <option value="processos" disabled>Gerenciamento do Sistema</option>
+                </select>
+            </div>
+
+            <!-- Seletor de Tema Visual -->
+            <div class="form-group">
+                <label for="theme">3. Tema Visual</label>
+                <select id="theme" class="form-select">
+                    <option value="catppuccin">Catppuccin Macchiato</option>
+                    <option value="nord">Nord Theme</option>
+                    <option value="dracula">Dracula Theme</option>
+                </select>
+            </div>
+
+            <!-- Seletor de Resolução -->
+            <div class="form-group">
+                <label for="resolution">4. Resolução de Saída</label>
+                <select id="resolution" class="form-select">
+                    <option value="1080p">Full HD (1920x1080)</option>
+                    <option value="2k">2K QHD (2560x1440)</option>
+                    <option value="4k">4K UHD (3840x2160)</option>
+                </select>
+            </div>
+
+            <!-- Botão de Ação -->
+            <button id="btn-export" class="btn-download">
+                Baixar PNG em Alta Resolução
+            </button>
+        </aside>
+
+        <!-- Visualização em Tempo Real (Preview) -->
+        <section class="preview-viewport">
+            <div id="wallpaper-preview" class="wallpaper-frame" data-theme="catppuccin">
+                <!-- O conteúdo HTML do template será carregado aqui via JS na próxima Sprint -->
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

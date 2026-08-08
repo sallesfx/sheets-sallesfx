@@ -1,0 +1,182 @@
+/* ==========================================================================
+   Sheets - sallesfx | Design System & Global Styles
+   ========================================================================== */
+
+/* 1. Variáveis Globais de Cores & Temas */
+:root {
+    /* Cores Base da Interface (Identidade sallesfx - Dark/Sóbrio) */
+    --ui-bg: #0f111a;
+    --ui-surface: #1a1d2d;
+    --ui-border: #2e334d;
+    --ui-text: #e2e8f0;
+    --ui-text-muted: #94a3b8;
+    --ui-accent: #3b82f6;
+    --ui-accent-hover: #2563eb;
+
+    /* Fontes */
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+    /* Tema Padrão da Cheatsheet (Catppuccin Macchiato) */
+    --sheet-bg: #24273a;
+    --sheet-card-bg: #1e2030;
+    --sheet-card-border: #363a4f;
+    --sheet-text: #cad3f5;
+    --sheet-title: #f5a97f;
+    --sheet-cmd: #a6da95;
+    --sheet-flag: #c6a0f6;
+    --sheet-comment: #6e738d;
+}
+
+/* Temas Dinâmicos para os Wallpapers */
+[data-theme="nord"] {
+    --sheet-bg: #2e3440;
+    --sheet-card-bg: #3b4252;
+    --sheet-card-border: #434c5e;
+    --sheet-text: #eceff4;
+    --sheet-title: #88c0d0;
+    --sheet-cmd: #a3be8c;
+    --sheet-flag: #ebcb8b;
+    --sheet-comment: #4c566a;
+}
+
+[data-theme="dracula"] {
+    --sheet-bg: #282a36;
+    --sheet-card-bg: #44475a;
+    --sheet-card-border: #6272a4;
+    --sheet-text: #f8f8f2;
+    --sheet-title: #ff79c6;
+    --sheet-cmd: #50fa7b;
+    --sheet-flag: #bd93f9;
+    --sheet-comment: #6272a4;
+}
+
+/* 2. Reset e Estilos da UI */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--ui-bg);
+    color: var(--ui-text);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.app-header {
+    background-color: var(--ui-surface);
+    border-bottom: 1px solid var(--ui-border);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ui-text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.brand span {
+    color: var(--ui-accent);
+}
+
+/* Container Principal (Layout 2 Colunas: Controles e Preview) */
+.app-container {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    flex: 1;
+}
+
+/* Painel de Controles */
+.controls-panel {
+    background-color: var(--ui-surface);
+    border: 1px solid var(--ui-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    height: fit-content;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--ui-text-muted);
+}
+
+.form-select {
+    background-color: var(--ui-bg);
+    border: 1px solid var(--ui-border);
+    color: var(--ui-text);
+    padding: 0.625rem 0.875rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.form-select:focus {
+    border-color: var(--ui-accent);
+}
+
+.btn-download {
+    background-color: var(--ui-accent);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 1rem;
+}
+
+.btn-download:hover {
+    background-color: var(--ui-accent-hover);
+}
+
+/* Área de Preview do Wallpaper */
+.preview-viewport {
+    background-color: #05060a;
+    border: 1px dashed var(--ui-border);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Moldura para simular o wallpaper proporcional */
+.wallpaper-frame {
+    width: 100%;
+    max-width: 960px;
+    /* Preview reduzido em escala */
+    aspect-ratio: 16 / 9;
+    background-color: var(--sheet-bg);
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
