@@ -1,0 +1,23 @@
+name: Deploy Sheets to Hostinger
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  web-deploy:
+    name: 🚀 Deploy via FTP
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Checkout do Codigo
+        uses: actions/checkout@v4
+
+      - name: 📂 Sincronizar Arquivos com a Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # Como a conta FTP já está limitada à pasta public_html/sheets, enviamos para a raiz do FTP
+          server-dir: /
