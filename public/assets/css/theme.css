@@ -180,3 +180,108 @@ body {
     overflow: hidden;
     transition: all 0.3s ease;
 }
+
+/* ==========================================================================
+   Estilos do Template de Wallpaper (Renderizado dentro da Moldura)
+   ========================================================================== */
+
+.sheet-container {
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem 2rem;
+    /* Reduzido de 2.5rem para caber na moldura */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    font-family: var(--font-mono);
+    color: var(--sheet-text);
+    background-color: var(--sheet-bg);
+    overflow: hidden;
+    /* Garante que nada vaze fora do wallpaper */
+}
+
+.sheet-header {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.sheet-title {
+    font-size: 1.2rem;
+    /* Reduzido levemente para caber em previews menores */
+    font-weight: 700;
+    color: var(--sheet-title);
+    letter-spacing: 2px;
+}
+
+.sheet-subtitle {
+    font-size: 0.75rem;
+    color: var(--sheet-comment);
+    margin-top: 0.15rem;
+}
+
+.sheet-domain {
+    color: var(--sheet-title);
+    font-weight: bold;
+}
+
+.sheet-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    /* Reduzido para aproximar os cards */
+    flex: 1;
+    align-content: center;
+}
+
+.sheet-card {
+    background-color: var(--sheet-card-bg);
+    border: 1px solid var(--sheet-card-border);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    /* Compactado para economizar altura */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card-header {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--sheet-title);
+    border-bottom: 1px solid var(--sheet-card-border);
+    padding-bottom: 0.35rem;
+}
+
+.cmd-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.cmd-line {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--sheet-cmd);
+    background-color: var(--sheet-bg);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    width: fit-content;
+}
+
+.cmd-desc {
+    font-size: 0.68rem;
+    color: var(--sheet-text);
+    line-height: 1.2;
+}
+
+.cmd-flag {
+    color: var(--sheet-flag);
+}
+
+.sheet-footer {
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--sheet-comment);
+    margin-top: 0.5rem;
+}
