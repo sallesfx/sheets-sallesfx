@@ -285,3 +285,33 @@ body {
     color: var(--sheet-comment);
     margin-top: 0.5rem;
 }
+
+/* Ajuste de escala para quando o container for renderizado em alta resolução real */
+.wallpaper-frame[style*="px"] .sheet-container {
+    padding: 4rem 5rem;
+}
+
+.wallpaper-frame[style*="px"] .sheet-title {
+    font-size: 3rem;
+}
+
+.wallpaper-frame[style*="px"] .sheet-subtitle {
+    font-size: 1.5rem;
+}
+
+.wallpaper-frame[style*="px"] .card-header {
+    font-size: 1.75rem;
+}
+
+.wallpaper-frame[style*="px"] .cmd-line {
+    font-size: 1.4rem;
+    padding: 0.5rem 0.8rem;
+}
+
+.wallpaper-frame[style*="px"] .cmd-desc {
+    font-size: 1.2rem;
+}
+
+.wallpaper-frame[style*="px"] .sheet-footer {
+    font-size: 1.2rem;
+}
