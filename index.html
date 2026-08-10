@@ -79,48 +79,51 @@
 <body class="min-h-screen flex flex-col font-sans text-sm overflow-hidden antialiased">
 
     <!-- TopNavBar -->
+    <!-- TopNavBar Responsiva -->
     <nav
-        class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-dev-base/80 backdrop-blur-md border-b border-dev-border">
-        <div class="flex items-center gap-4">
+        class="fixed top-0 w-full z-50 flex justify-between items-center px-4 md:px-6 h-16 bg-dev-base/80 backdrop-blur-md border-b border-dev-border">
+        <div class="flex items-center gap-3">
             <a href="https://sallesfx.com.br"
-                class="text-xl font-bold flex items-center hover:opacity-90 transition-opacity">
+                class="text-lg md:text-xl font-bold flex items-center hover:opacity-90 transition-opacity">
                 <span class="text-on-surface">sallesfx</span>
                 <span class="text-dev-primary ml-1">/ sheets</span>
             </a>
             <span
-                class="text-xs font-mono bg-dev-primary/10 text-dev-primary px-2 py-0.5 rounded border border-dev-primary/20 uppercase">v1.0
+                class="text-[10px] md:text-xs font-mono bg-dev-primary/10 text-dev-primary px-2 py-0.5 rounded border border-dev-primary/20 uppercase">v1.0
                 MVP</span>
         </div>
 
-        <div class="flex items-center gap-4">
-            <div class="hidden md:flex items-center gap-2 text-on-surface-variant text-xs font-mono">
+        <div class="flex items-center gap-3">
+            <div class="hidden sm:flex items-center gap-2 text-on-surface-variant text-xs font-mono">
                 <span class="material-symbols-outlined text-[18px]">language</span>
                 <span>PT-BR</span>
             </div>
             <a href="https://github.com/sallesfx/sheets-sallesfx" target="_blank"
-                class="flex items-center gap-2 px-3 py-1.5 border border-dev-border rounded text-xs font-mono text-dev-primary hover:bg-white/5 transition-colors group">
-                <span class="uppercase">Ver no GitHub</span>
+                class="flex items-center gap-2 px-2.5 py-1.5 border border-dev-border rounded text-xs font-mono text-dev-primary hover:bg-white/5 transition-colors group">
+                <span class="hidden sm:inline uppercase">Ver no GitHub</span>
                 <span
-                    class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">code</span>
             </a>
         </div>
     </nav>
 
-    <!-- Main Layout -->
-    <main class="flex-1 flex mt-16 h-[calc(100vh-64px)] w-full max-w-[1440px] mx-auto">
+    <!-- Main Layout Responsivo -->
+    <main
+        class="flex-1 flex flex-col lg:flex-row mt-16 min-h-[calc(100vh-64px)] w-full max-w-[1440px] mx-auto overflow-x-hidden">
 
-        <!-- Painel Lateral Esquerdo (Configurações) -->
+        <!-- Painel Lateral / Superior de Configurações -->
         <aside
-            class="w-[320px] h-full bg-dev-surface border-r border-dev-border flex flex-col shrink-0 overflow-y-auto">
-            <div class="p-6 border-b border-dev-border">
-                <h1 class="text-lg font-semibold text-on-surface mb-1">Configuração</h1>
+            class="w-full lg:w-[320px] h-auto lg:h-full bg-dev-surface border-b lg:border-b-0 lg:border-r border-dev-border flex flex-col shrink-0">
+            <div class="p-4 md:p-6 border-b border-dev-border">
+                <h1 class="text-base md:text-lg font-semibold text-on-surface mb-0.5">Configuração</h1>
                 <p class="text-xs text-on-surface-variant">Personalize seu wallpaper técnico</p>
             </div>
 
-            <div class="p-6 flex flex-col gap-6 flex-1">
+            <!-- Form com Grid em telas médias (tablets) e 1 coluna no mobile/desktop -->
+            <div class="p-4 md:p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 md:gap-6 flex-1">
 
                 <!-- 1. Categoria -->
-                <div class="flex flex-col gap-2">
+                <div class="flex flex-col gap-1.5">
                     <label for="category" class="text-xs font-mono text-on-surface-variant flex items-center gap-2">
                         <span class="material-symbols-outlined text-[16px]">category</span>
                         1. CATEGORIA
@@ -138,7 +141,7 @@
                 </div>
 
                 <!-- 2. Conteúdo -->
-                <div class="flex flex-col gap-2">
+                <div class="flex flex-col gap-1.5">
                     <label for="subcategory" class="text-xs font-mono text-on-surface-variant flex items-center gap-2">
                         <span class="material-symbols-outlined text-[16px]">description</span>
                         2. CONTEÚDO
@@ -156,7 +159,7 @@
                 </div>
 
                 <!-- 3. Tema Visual -->
-                <div class="flex flex-col gap-2">
+                <div class="flex flex-col gap-1.5">
                     <label for="theme" class="text-xs font-mono text-on-surface-variant flex items-center gap-2">
                         <span class="material-symbols-outlined text-[16px]">palette</span>
                         3. TEMA VISUAL
@@ -174,7 +177,7 @@
                 </div>
 
                 <!-- 4. Resolução -->
-                <div class="flex flex-col gap-2">
+                <div class="flex flex-col gap-1.5">
                     <label for="resolution" class="text-xs font-mono text-on-surface-variant flex items-center gap-2">
                         <span class="material-symbols-outlined text-[16px]">aspect_ratio</span>
                         4. RESOLUÇÃO DE SAÍDA
@@ -193,8 +196,8 @@
 
             </div>
 
-            <!-- Botão de Ação / Exportação -->
-            <div class="p-6 border-t border-dev-border mt-auto">
+            <!-- Botão de Ação -->
+            <div class="p-4 md:p-6 border-t border-dev-border mt-auto">
                 <button id="btn-export"
                     class="w-full bg-dev-primary text-white font-mono text-xs py-3 px-4 rounded hover:shadow-glow-primary-hover hover:bg-blue-600 transition-all flex items-center justify-center gap-2 group uppercase font-semibold">
                     Baixar PNG em Alta Resolução
@@ -204,27 +207,27 @@
             </div>
         </aside>
 
-        <!-- Canvas de Preview -->
-        <section class="flex-1 relative flex flex-col bg-dev-base dot-bg overflow-hidden">
+        <!-- Canvas de Preview Responsivo -->
+        <section class="flex-1 relative flex flex-col bg-dev-base dot-bg overflow-hidden min-h-[400px] lg:min-h-0">
             <!-- Status Top Bar -->
-            <div class="absolute top-0 w-full p-4 flex justify-between items-center z-10 pointer-events-none">
+            <div class="w-full p-3 md:p-4 flex justify-between items-center z-10">
                 <span
-                    class="font-mono text-xs bg-dev-surface/90 backdrop-blur border border-dev-border text-on-surface px-3 py-1.5 rounded flex items-center gap-2 shadow-sm">
+                    class="font-mono text-[11px] md:text-xs bg-dev-surface/90 backdrop-blur border border-dev-border text-on-surface px-2.5 py-1 rounded flex items-center gap-2 shadow-sm">
                     <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                    Pré-visualização em Tempo Real
+                    Pré-visualização
                 </span>
                 <span
-                    class="font-mono text-xs bg-dev-surface/90 backdrop-blur border border-dev-border text-on-surface-variant px-3 py-1.5 rounded">
-                    PROPORÇÃO 16:9
+                    class="font-mono text-[11px] md:text-xs bg-dev-surface/90 backdrop-blur border border-dev-border text-on-surface-variant px-2.5 py-1 rounded">
+                    16:9
                 </span>
             </div>
 
             <!-- Viewport Centralizada com Moldura do Wallpaper -->
-            <div class="flex-1 flex items-center justify-center p-8 relative">
+            <div class="flex-1 flex items-center justify-center p-3 md:p-8 relative w-full overflow-x-auto">
                 <div id="wallpaper-preview"
-                    class="wallpaper-frame w-full max-w-[960px] aspect-video rounded-xl border border-dev-border shadow-2xl relative overflow-hidden flex flex-col transition-transform duration-300 hover:scale-[1.01]"
+                    class="wallpaper-frame w-full max-w-[960px] aspect-video rounded-lg md:rounded-xl border border-dev-border shadow-2xl relative overflow-hidden flex flex-col transition-transform duration-300"
                     data-theme="catppuccin">
-                    <!-- O conteúdo HTML do template (templates/linux/navegacao.html) será injetado aqui dinamicamente pelo app.js -->
+                    <!-- O conteúdo HTML do template será injetado aqui -->
                 </div>
             </div>
         </section>

@@ -315,3 +315,51 @@ body {
 .wallpaper-frame[style*="px"] .sheet-footer {
     font-size: 1.2rem;
 }
+
+/* ==========================================================================
+   Ajustes Responsivos para Telas Menores (Mobile & Tablets)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .sheet-container {
+        padding: 0.85rem 1rem;
+    }
+
+    .sheet-title {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+
+    .sheet-subtitle {
+        font-size: 0.6rem;
+    }
+
+    .sheet-grid {
+        gap: 0.4rem;
+    }
+
+    .sheet-card {
+        padding: 0.4rem 0.55rem;
+        gap: 0.25rem;
+    }
+
+    .card-header {
+        font-size: 0.68rem;
+        padding-bottom: 0.2rem;
+    }
+
+    .cmd-line {
+        font-size: 0.6rem;
+        padding: 0.1rem 0.3rem;
+    }
+
+    .cmd-desc {
+        font-size: 0.55rem;
+        line-height: 1.1;
+    }
+
+    .sheet-footer {
+        font-size: 0.55rem;
+        margin-top: 0.25rem;
+    }
+}
