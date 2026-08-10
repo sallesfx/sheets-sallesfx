@@ -2,6 +2,9 @@
  * Sheets - sallesfx | Core Engine & High-Res PNG Exporter
  */
 
+const APP_VERSION = "v1.0.1";
+document.getElementById("app-version").textContent = APP_VERSION;
+
 document.addEventListener('DOMContentLoaded', () => {
     // Elementos do DOM
     const categorySelect = document.getElementById('category');

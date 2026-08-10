@@ -58,6 +58,10 @@
     padding: 0;
 }
 
+select {
+    background-image: none;
+}
+
 body {
     background-color: var(--ui-bg);
     color: var(--ui-text);
