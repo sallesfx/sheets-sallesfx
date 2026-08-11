@@ -1,0 +1,45 @@
+{
+  "id": "fhs",
+  "category": "linux",
+  "title": "LINUX FILESYSTEM HIERARCHY (FHS)",
+  "subtitle": "Estrutura Padrão de Diretórios do Linux • <span class=\"sheet-domain\">sallesfx.com.br</span>",
+  "cards": [
+    {
+      "header": "📂 1. Sistema e Executáveis",
+      "items": [
+        { "cmd": "/bin", "desc": "Binários e comandos essenciais do sistema (ls, cd, cp)." },
+        { "cmd": "/sbin", "desc": "Comandos de administração do sistema (reboot, fdisk)." },
+        { "cmd": "/usr/bin", "desc": "Programas e utilitários dos usuários." },
+        { "cmd": "/opt", "desc": "Softwares adicionais e de terceiros instalados." }
+      ]
+    },
+    {
+      "header": "⚙️ 2. Configuração e Dados",
+      "items": [
+        { "cmd": "/etc", "desc": "Arquivos de configuração do sistema e serviços." },
+        { "cmd": "/var", "desc": "Arquivos variáveis (logs, spools de impressão, bancos)." },
+        { "cmd": "/srv", "desc": "Dados de serviços servidos pelo sistema (web, ftp)." },
+        { "cmd": "/tmp", "desc": "Arquivos temporários excluídos na reinicialização." }
+      ]
+    },
+    {
+      "header": "👤 3. Usuários e Dispositivos",
+      "items": [
+        { "cmd": "/home", "desc": "Diretórios pessoais dos usuários comuns." },
+        { "cmd": "/root", "desc": "Diretório pessoal do superusuário (root)." },
+        { "cmd": "/dev", "desc": "Arquivos de dispositivos de hardware (HDs, tty)." },
+        { "cmd": "/media", "desc": "Ponto de montagem para mídias removíveis (USB)." }
+      ]
+    },
+    {
+      "header": "🧠 4. Kernel e Processos",
+      "items": [
+        { "cmd": "/proc", "desc": "Sistemas de arquivos virtuais com dados de processos e CPU." },
+        { "cmd": "/sys", "desc": "Informações do Kernel sobre dispositivos e drivers." },
+        { "cmd": "/boot", "desc": "Arquivos do inicializador de boot (GRUB, Kernel vmlinuz)." },
+        { "cmd": "/lib", "desc": "Bibliotecas compartilhadas essenciais do sistema." }
+      ]
+    }
+  ],
+  "footer": "Desenvolvido para aprendizado contínuo • <strong>sallesfx.com.br</strong>"
+}

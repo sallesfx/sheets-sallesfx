@@ -1,0 +1,41 @@
+{
+  "id": "basico",
+  "category": "git",
+  "title": "GIT & GITHUB CHEAT SHEET",
+  "subtitle": "Fluxo de Trabalho Essencial de Controle de Versão • <span class=\"sheet-domain\">sallesfx.com.br</span>",
+  "cards": [
+    {
+      "header": "🚀 1. Iniciar e Clonar",
+      "items": [
+        { "cmd": "git init", "desc": "Inicializa um novo repositório Git local." },
+        { "cmd": "git clone <span class=\"cmd-flag\">url</span>", "desc": "Clona um repositório remoto existente." },
+        { "cmd": "git status", "desc": "Mostra o estado dos arquivos modificados." }
+      ]
+    },
+    {
+      "header": "📝 2. Commit e Histórico",
+      "items": [
+        { "cmd": "git add <span class=\"cmd-flag\">.</span>", "desc": "Adiciona todas as alterações para a Staging Area." },
+        { "cmd": "git commit <span class=\"cmd-flag\">-m \"msg\"</span>", "desc": "Salva o snapshot com uma mensagem descritiva." },
+        { "cmd": "git log <span class=\"cmd-flag\">--oneline</span>", "desc": "Exibe o histórico de commits de forma concisa." }
+      ]
+    },
+    {
+      "header": "🌿 3. Branches e Merge",
+      "items": [
+        { "cmd": "git checkout <span class=\"cmd-flag\">-b nome</span>", "desc": "Cria e muda para uma nova branch." },
+        { "cmd": "git switch <span class=\"cmd-flag\">main</span>", "desc": "Alterna para a branch especificada." },
+        { "cmd": "git merge <span class=\"cmd-flag\">feature</span>", "desc": "Funde a branch especificada na atual." }
+      ]
+    },
+    {
+      "header": "🌐 4. Sincronização Remota",
+      "items": [
+        { "cmd": "git pull <span class=\"cmd-flag\">origin main</span>", "desc": "Baixa e mescla as alterações do servidor remoto." },
+        { "cmd": "git push <span class=\"cmd-flag\">origin main</span>", "desc": "Envia os commits locais para o repositório remoto." },
+        { "cmd": "git stash", "desc": "Guarda alterações temporariamente sem comitar." }
+      ]
+    }
+  ],
+  "footer": "Desenvolvido para aprendizado contínuo • <strong>sallesfx.com.br</strong>"
+}
