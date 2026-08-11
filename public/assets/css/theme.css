@@ -174,9 +174,11 @@ body {
 
 /* Moldura para simular o wallpaper proporcional */
 .wallpaper-frame {
+    container-type: inline-size;
+    container-name: wallpaper;
     width: 100%;
     max-width: 960px;
-    /* Preview reduzido em escala */
+    max-height: 100%;
     aspect-ratio: 16 / 9;
     background-color: var(--sheet-bg);
     border-radius: 8px;
@@ -187,13 +189,14 @@ body {
 
 /* ==========================================================================
    Estilos do Template de Wallpaper (Renderizado dentro da Moldura)
+   Utiliza Container Queries (cqw) para garantir escalonamento 100% vetorial
+   e impedir corte de conteúdo em qualquer resolução ou tamanho de tela.
    ========================================================================== */
 
 .sheet-container {
     width: 100%;
     height: 100%;
-    padding: 1.5rem 2rem;
-    /* Reduzido de 2.5rem para caber na moldura */
+    padding: 1.5cqw 2cqw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -202,26 +205,25 @@ body {
     color: var(--sheet-text);
     background-color: var(--sheet-bg);
     overflow: hidden;
-    /* Garante que nada vaze fora do wallpaper */
 }
 
 .sheet-header {
     text-align: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4cqw;
 }
 
 .sheet-title {
-    font-size: 1.2rem;
-    /* Reduzido levemente para caber em previews menores */
+    font-size: 1.8cqw;
     font-weight: 700;
     color: var(--sheet-title);
-    letter-spacing: 2px;
+    letter-spacing: 0.12cqw;
+    line-height: 1.15;
 }
 
 .sheet-subtitle {
-    font-size: 0.75rem;
+    font-size: 0.95cqw;
     color: var(--sheet-comment);
-    margin-top: 0.15rem;
+    margin-top: 0.15cqw;
 }
 
 .sheet-domain {
@@ -232,8 +234,7 @@ body {
 .sheet-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-    /* Reduzido para aproximar os cards */
+    gap: 0.8cqw;
     flex: 1;
     align-content: center;
 }
@@ -241,42 +242,42 @@ body {
 .sheet-card {
     background-color: var(--sheet-card-bg);
     border: 1px solid var(--sheet-card-border);
-    border-radius: 8px;
-    padding: 0.85rem 1rem;
-    /* Compactado para economizar altura */
+    border-radius: 0.5cqw;
+    padding: 0.8cqw 1cqw;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.35cqw;
 }
 
 .card-header {
-    font-size: 0.85rem;
+    font-size: 1.05cqw;
     font-weight: bold;
     color: var(--sheet-title);
     border-bottom: 1px solid var(--sheet-card-border);
-    padding-bottom: 0.35rem;
+    padding-bottom: 0.25cqw;
+    margin-bottom: 0.1cqw;
 }
 
 .cmd-group {
     display: flex;
     flex-direction: column;
-    gap: 0.1rem;
+    gap: 0.1cqw;
 }
 
 .cmd-line {
-    font-size: 0.75rem;
+    font-size: 0.92cqw;
     font-weight: bold;
     color: var(--sheet-cmd);
     background-color: var(--sheet-bg);
-    padding: 0.15rem 0.4rem;
-    border-radius: 4px;
+    padding: 0.1cqw 0.35cqw;
+    border-radius: 0.2cqw;
     width: fit-content;
 }
 
 .cmd-desc {
-    font-size: 0.68rem;
+    font-size: 0.82cqw;
     color: var(--sheet-text);
-    line-height: 1.2;
+    line-height: 1.15;
 }
 
 .cmd-flag {
@@ -285,85 +286,7 @@ body {
 
 .sheet-footer {
     text-align: center;
-    font-size: 0.7rem;
+    font-size: 0.85cqw;
     color: var(--sheet-comment);
-    margin-top: 0.5rem;
-}
-
-/* Ajuste de escala para quando o container for renderizado em alta resolução real */
-.wallpaper-frame[style*="px"] .sheet-container {
-    padding: 4rem 5rem;
-}
-
-.wallpaper-frame[style*="px"] .sheet-title {
-    font-size: 3rem;
-}
-
-.wallpaper-frame[style*="px"] .sheet-subtitle {
-    font-size: 1.5rem;
-}
-
-.wallpaper-frame[style*="px"] .card-header {
-    font-size: 1.75rem;
-}
-
-.wallpaper-frame[style*="px"] .cmd-line {
-    font-size: 1.4rem;
-    padding: 0.5rem 0.8rem;
-}
-
-.wallpaper-frame[style*="px"] .cmd-desc {
-    font-size: 1.2rem;
-}
-
-.wallpaper-frame[style*="px"] .sheet-footer {
-    font-size: 1.2rem;
-}
-
-/* ==========================================================================
-   Ajustes Responsivos para Telas Menores (Mobile & Tablets)
-   ========================================================================== */
-
-@media (max-width: 768px) {
-    .sheet-container {
-        padding: 0.85rem 1rem;
-    }
-
-    .sheet-title {
-        font-size: 0.85rem;
-        letter-spacing: 1px;
-    }
-
-    .sheet-subtitle {
-        font-size: 0.6rem;
-    }
-
-    .sheet-grid {
-        gap: 0.4rem;
-    }
-
-    .sheet-card {
-        padding: 0.4rem 0.55rem;
-        gap: 0.25rem;
-    }
-
-    .card-header {
-        font-size: 0.68rem;
-        padding-bottom: 0.2rem;
-    }
-
-    .cmd-line {
-        font-size: 0.6rem;
-        padding: 0.1rem 0.3rem;
-    }
-
-    .cmd-desc {
-        font-size: 0.55rem;
-        line-height: 1.1;
-    }
-
-    .sheet-footer {
-        font-size: 0.55rem;
-        margin-top: 0.25rem;
-    }
+    margin-top: 0.4cqw;
 }

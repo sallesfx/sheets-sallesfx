@@ -152,6 +152,7 @@
                         <select id="subcategory"
                             class="w-full bg-dev-base border border-dev-border rounded font-mono text-xs text-on-surface py-2.5 px-3 appearance-none bg-none focus:border-dev-primary focus:ring-1 focus:ring-dev-primary outline-none transition-colors cursor-pointer">
                             <option value="navegacao">Navegação e Arquivos</option>
+                            <option value="fhs">Hierarquia de Arquivos (FHS)</option>
                             <option value="redes" disabled>Administração de Redes</option>
                             <option value="processos" disabled>Gerenciamento do Sistema</option>
                         </select>
@@ -225,9 +226,9 @@
             </div>
 
             <!-- Viewport Centralizada com Moldura do Wallpaper -->
-            <div class="flex-1 flex items-center justify-center p-3 md:p-8 relative w-full overflow-x-auto">
+            <div class="flex-1 flex items-center justify-center p-3 md:p-6 relative w-full h-full overflow-auto">
                 <div id="wallpaper-preview"
-                    class="wallpaper-frame w-full max-w-[960px] aspect-video rounded-lg md:rounded-xl border border-dev-border shadow-2xl relative overflow-hidden flex flex-col transition-transform duration-300"
+                    class="wallpaper-frame w-full max-w-[960px] max-h-[calc(100vh-140px)] aspect-video rounded-lg md:rounded-xl border border-dev-border shadow-2xl relative overflow-hidden flex flex-col transition-transform duration-300"
                     data-theme="catppuccin">
                     <!-- O conteúdo HTML do template será injetado aqui -->
                 </div>

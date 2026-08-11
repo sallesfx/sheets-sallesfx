@@ -2,7 +2,7 @@
  * Sheets - sallesfx | Core Engine & High-Res PNG Exporter
  */
 
-const APP_VERSION = "v1.0.2";
+const APP_VERSION = "v1.1.0";
 document.getElementById("app-version").textContent = APP_VERSION;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,6 +20,35 @@ document.addEventListener('DOMContentLoaded', () => {
         '2k': { width: 2560, height: 1440 },
         '4k': { width: 3840, height: 2160 }
     };
+
+    // Mapeamento de templates disponíveis por categoria
+    const TEMPLATE_MAP = {
+        linux: [
+            { id: 'navegacao', name: 'Navegação e Arquivos', disabled: false },
+            { id: 'fhs', name: 'Hierarquia de Arquivos (FHS)', disabled: false },
+            { id: 'redes', name: 'Administração de Redes (Em breve)', disabled: true },
+            { id: 'processos', name: 'Gerenciamento do Sistema (Em breve)', disabled: true }
+        ],
+        git: [],
+        docker: []
+    };
+
+    /**
+     * Atualiza as opções do select de subcategoria baseado na categoria selecionada
+     */
+    function updateSubcategoryOptions(category) {
+        const items = TEMPLATE_MAP[category] || [];
+        if (items.length === 0) return;
+
+        subcategorySelect.innerHTML = '';
+        items.forEach(item => {
+            const opt = document.createElement('option');
+            opt.value = item.id;
+            opt.textContent = item.name;
+            if (item.disabled) opt.disabled = true;
+            subcategorySelect.appendChild(opt);
+        });
+    }
 
     /**
      * Carrega o template HTML e injeta no container do preview
@@ -112,13 +141,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event Listeners
     themeSelect.addEventListener('change', (e) => updateTheme(e.target.value));
-    categorySelect.addEventListener('change', () => loadTemplate(categorySelect.value, subcategorySelect.value));
+    categorySelect.addEventListener('change', () => {
+        updateSubcategoryOptions(categorySelect.value);
+        loadTemplate(categorySelect.value, subcategorySelect.value);
+    });
     subcategorySelect.addEventListener('change', () => loadTemplate(categorySelect.value, subcategorySelect.value));
 
     // Evento de Clique para Download
     btnExport.addEventListener('click', exportWallpaper);
 
     // Inicialização
+    updateSubcategoryOptions(categorySelect.value);
     loadTemplate(categorySelect.value, subcategorySelect.value);
     updateTheme(themeSelect.value);
 });
