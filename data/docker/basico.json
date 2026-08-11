@@ -1,0 +1,41 @@
+{
+  "id": "basico",
+  "category": "docker",
+  "title": "DOCKER & CONTAINERS CHEAT SHEET",
+  "subtitle": "Comandos Fundamentais de Gerenciamento de Containers • <span class=\"sheet-domain\">sallesfx.com.br</span>",
+  "cards": [
+    {
+      "header": "📦 1. Imagens Docker",
+      "items": [
+        { "cmd": "docker pull <span class=\"cmd-flag\">imagem</span>", "desc": "Baixa uma imagem do Docker Hub." },
+        { "cmd": "docker images", "desc": "Lista todas as imagens baixadas localmente." },
+        { "cmd": "docker rmi <span class=\"cmd-flag\">id_imagem</span>", "desc": "Remove uma imagem do sistema local." }
+      ]
+    },
+    {
+      "header": "🚢 2. Executar Containers",
+      "items": [
+        { "cmd": "docker run <span class=\"cmd-flag\">-d -p 80:80 nginx</span>", "desc": "Roda container em background mapeando portas." },
+        { "cmd": "docker ps <span class=\"cmd-flag\">-a</span>", "desc": "Lista todos os containers (ativos e parados)." },
+        { "cmd": "docker exec <span class=\"cmd-flag\">-it nome bash</span>", "desc": "Acessa o terminal dentro de um container rodando." }
+      ]
+    },
+    {
+      "header": "🛑 3. Ciclo de Vida e Logs",
+      "items": [
+        { "cmd": "docker stop <span class=\"cmd-flag\">container</span>", "desc": "Para a execução de um container ativo." },
+        { "cmd": "docker start <span class=\"cmd-flag\">container</span>", "desc": "Inicia um container previamente parado." },
+        { "cmd": "docker logs <span class=\"cmd-flag\">-f container</span>", "desc": "Acompanha os logs em tempo real." }
+      ]
+    },
+    {
+      "header": "🧹 4. Limpeza e Compose",
+      "items": [
+        { "cmd": "docker rm <span class=\"cmd-flag\">container</span>", "desc": "Remove um container parado." },
+        { "cmd": "docker system prune <span class=\"cmd-flag\">-a</span>", "desc": "Remove containers, redes e imagens não utilizados." },
+        { "cmd": "docker compose up <span class=\"cmd-flag\">-d</span>", "desc": "Sobe aplicação definida no docker-compose.yml." }
+      ]
+    }
+  ],
+  "footer": "Desenvolvido para aprendizado contínuo • <strong>sallesfx.com.br</strong>"
+}

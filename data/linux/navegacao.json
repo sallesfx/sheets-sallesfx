@@ -1,0 +1,42 @@
+{
+  "id": "navegacao",
+  "category": "linux",
+  "title": "LINUX TERMINAL CHEAT SHEET",
+  "subtitle": "Guia Rápido de Navegação e Manipulação de Arquivos • <span class=\"sheet-domain\">sallesfx.com.br</span>",
+  "cards": [
+    {
+      "header": "📁 1. Navegar e Localizar",
+      "items": [
+        { "cmd": "pwd", "desc": "Exibe o caminho absoluto do diretório atual." },
+        { "cmd": "cd <span class=\"cmd-flag\">~/pasta</span>", "desc": "Navega para a pasta no diretório pessoal." },
+        { "cmd": "cd <span class=\"cmd-flag\">-</span>", "desc": "Volta ao último diretório acessado." },
+        { "cmd": "cd <span class=\"cmd-flag\">..</span>", "desc": "Sobe um nível para o diretório pai." }
+      ]
+    },
+    {
+      "header": "🔍 2. Listar Conteúdo",
+      "items": [
+        { "cmd": "ls <span class=\"cmd-flag\">-lh</span>", "desc": "Lista detalhes com tamanhos legíveis (KB, MB)." },
+        { "cmd": "ls <span class=\"cmd-flag\">-la</span>", "desc": "Exibe todos os arquivos, incluindo ocultos (.)." },
+        { "cmd": "tree <span class=\"cmd-flag\">-L 2</span>", "desc": "Exibe estrutura de pastas até nível 2." }
+      ]
+    },
+    {
+      "header": "🛠️ 3. Criar e Mover",
+      "items": [
+        { "cmd": "mkdir <span class=\"cmd-flag\">-p a/b/c</span>", "desc": "Cria pastas e subpastas aninhadas." },
+        { "cmd": "cp <span class=\"cmd-flag\">-r orig/ dest/</span>", "desc": "Copia diretórios e conteúdos recursivamente." },
+        { "cmd": "mv <span class=\"cmd-flag\">arq.txt ~/docs/</span>", "desc": "Move ou renomeia arquivos e pastas." }
+      ]
+    },
+    {
+      "header": "⚡ 4. Remover com Segurança",
+      "items": [
+        { "cmd": "rm <span class=\"cmd-flag\">arquivo.txt</span>", "desc": "Remove um arquivo comum permanentemente." },
+        { "cmd": "rm <span class=\"cmd-flag\">-ri pasta/</span>", "desc": "Remove diretório pedindo confirmação por item." },
+        { "cmd": "rm <span class=\"cmd-flag\">-rf pasta/</span>", "desc": "Força remoção sem confirmação (Cuidado!)." }
+      ]
+    }
+  ],
+  "footer": "Desenvolvido para aprendizado contínuo • <strong>sallesfx.com.br</strong>"
+}
