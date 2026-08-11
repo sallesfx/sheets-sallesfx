@@ -2,7 +2,7 @@
  * Sheets - sallesfx | Core Engine & High-Res PNG Exporter
  */
 
-const APP_VERSION = "v1.0.1";
+const APP_VERSION = "v1.0.2";
 document.getElementById("app-version").textContent = APP_VERSION;
 
 document.addEventListener('DOMContentLoaded', () => {
