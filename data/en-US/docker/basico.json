@@ -1,0 +1,41 @@
+{
+  "id": "basico",
+  "category": "docker",
+  "title": "DOCKER & CONTAINERS CHEAT SHEET",
+  "subtitle": "Fundamental Container Management Commands • <span class=\"sheet-domain\">sallesfx.com.br</span>",
+  "cards": [
+    {
+      "header": "📦 1. Docker Images",
+      "items": [
+        { "cmd": "docker pull <span class=\"cmd-flag\">imagem</span>", "desc": "Downloads an image from Docker Hub." },
+        { "cmd": "docker images", "desc": "Lists all images downloaded locally." },
+        { "cmd": "docker rmi <span class=\"cmd-flag\">id_imagem</span>", "desc": "Removes an image from the local system." }
+      ]
+    },
+    {
+      "header": "🚢 2. Run Containers",
+      "items": [
+        { "cmd": "docker run <span class=\"cmd-flag\">-d -p 80:80 nginx</span>", "desc": "Runs a container in the background mapping ports." },
+        { "cmd": "docker ps <span class=\"cmd-flag\">-a</span>", "desc": "Lists all containers (active and stopped)." },
+        { "cmd": "docker exec <span class=\"cmd-flag\">-it nome bash</span>", "desc": "Accesses the terminal inside a running container." }
+      ]
+    },
+    {
+      "header": "🛑 3. Lifecycle and Logs",
+      "items": [
+        { "cmd": "docker stop <span class=\"cmd-flag\">container</span>", "desc": "Stops the execution of an active container." },
+        { "cmd": "docker start <span class=\"cmd-flag\">container</span>", "desc": "Starts a previously stopped container." },
+        { "cmd": "docker logs <span class=\"cmd-flag\">-f container</span>", "desc": "Follows the logs in real time." }
+      ]
+    },
+    {
+      "header": "🧹 4. Cleanup and Compose",
+      "items": [
+        { "cmd": "docker rm <span class=\"cmd-flag\">container</span>", "desc": "Removes a stopped container." },
+        { "cmd": "docker system prune <span class=\"cmd-flag\">-a</span>", "desc": "Removes unused containers, networks, and images." },
+        { "cmd": "docker compose up <span class=\"cmd-flag\">-d</span>", "desc": "Starts the application defined in docker-compose.yml." }
+      ]
+    }
+  ],
+  "footer": "Built for continuous learning • <strong>sallesfx.com.br</strong>"
+}

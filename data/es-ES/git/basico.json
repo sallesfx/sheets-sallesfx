@@ -1,0 +1,41 @@
+{
+  "id": "basico",
+  "category": "git",
+  "title": "HOJA DE REFERENCIA DE GIT Y GITHUB",
+  "subtitle": "Flujo de Trabajo Esencial de Control de Versiones • <span class=\"sheet-domain\">sallesfx.com.br</span>",
+  "cards": [
+    {
+      "header": "🚀 1. Iniciar y Clonar",
+      "items": [
+        { "cmd": "git init", "desc": "Inicializa un nuevo repositorio Git local." },
+        { "cmd": "git clone <span class=\"cmd-flag\">url</span>", "desc": "Clona un repositorio remoto existente." },
+        { "cmd": "git status", "desc": "Muestra el estado de los archivos modificados." }
+      ]
+    },
+    {
+      "header": "📝 2. Commit e Historial",
+      "items": [
+        { "cmd": "git add <span class=\"cmd-flag\">.</span>", "desc": "Añade todos los cambios al área de staging." },
+        { "cmd": "git commit <span class=\"cmd-flag\">-m \"msg\"</span>", "desc": "Guarda la instantánea con un mensaje descriptivo." },
+        { "cmd": "git log <span class=\"cmd-flag\">--oneline</span>", "desc": "Muestra el historial de commits de forma concisa." }
+      ]
+    },
+    {
+      "header": "🌿 3. Ramas y Merge",
+      "items": [
+        { "cmd": "git checkout <span class=\"cmd-flag\">-b nome</span>", "desc": "Crea y cambia a una nueva rama." },
+        { "cmd": "git switch <span class=\"cmd-flag\">main</span>", "desc": "Cambia a la rama especificada." },
+        { "cmd": "git merge <span class=\"cmd-flag\">feature</span>", "desc": "Fusiona la rama especificada en la actual." }
+      ]
+    },
+    {
+      "header": "🌐 4. Sincronización Remota",
+      "items": [
+        { "cmd": "git pull <span class=\"cmd-flag\">origin main</span>", "desc": "Descarga y fusiona los cambios del servidor remoto." },
+        { "cmd": "git push <span class=\"cmd-flag\">origin main</span>", "desc": "Envía los commits locales al repositorio remoto." },
+        { "cmd": "git stash", "desc": "Guarda los cambios temporalmente sin confirmarlos." }
+      ]
+    }
+  ],
+  "footer": "Desarrollado para el aprendizaje continuo • <strong>sallesfx.com.br</strong>"
+}

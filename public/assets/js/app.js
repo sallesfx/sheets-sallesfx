@@ -12,7 +12,156 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeSelect = document.getElementById('theme');
     const resolutionSelect = document.getElementById('resolution');
     const btnExport = document.getElementById('btn-export');
+    const langSelect = document.getElementById('lang-select');
     const previewContainer = document.getElementById('wallpaper-preview');
+
+    const uiTitle = document.getElementById('ui-title');
+    const uiSubtitle = document.getElementById('ui-subtitle');
+    const uiCategoryLabel = document.getElementById('ui-category-label');
+    const uiContentLabel = document.getElementById('ui-content-label');
+    const uiThemeLabel = document.getElementById('ui-theme-label');
+    const uiResolutionLabel = document.getElementById('ui-resolution-label');
+    const uiExportLabel = document.getElementById('ui-export-label');
+    const uiPreviewStatus = document.getElementById('ui-preview-status');
+    const uiGithub = document.getElementById('ui-github');
+
+    const LOCALES = ["pt-BR", "en-US", "es-ES", "de-DE", "fr-FR"];
+    const LOCALE_STORAGE_KEY = 'sheet-locale';
+
+    const UI = {
+        "pt-BR": {
+            "title": "sallesfx / sheets - Configurar Wallpaper",
+            "configTitle": "Configuração",
+            "configSubtitle": "Personalize seu wallpaper técnico",
+            "categoryLabel": "1. CATEGORIA",
+            "contentLabel": "2. CONTEÚDO",
+            "themeLabel": "3. TEMA VISUAL",
+            "resolutionLabel": "4. RESOLUÇÃO DE SAÍDA",
+            "exportButton": "Baixar PNG em Alta Resolução",
+            "previewStatus": "Pré-visualização",
+            "viewOnGithub": "Ver no GitHub",
+            "noContent": "Nenhum conteúdo disponível",
+            "loadError": "Erro ao carregar os dados: ",
+            "sheetNotFound": "Cheat sheet não encontrado.",
+            "generating": "Gerando Imagem...",
+            "exportError": "Ocorreu um erro ao gerar a imagem. Tente novamente.",
+            "catalog": {
+                "linux": "Linux Terminal",
+                "linux.navegacao": "Navegação e Arquivos",
+                "linux.fhs": "Hierarquia de Arquivos (FHS)",
+                "git": "Git & GitHub",
+                "git.basico": "Fluxo de Trabalho Essencial",
+                "docker": "Docker & Containers",
+                "docker.basico": "Comandos Fundamentais"
+            }
+        },
+        "en-US": {
+            "title": "sallesfx / sheets - Configure Wallpaper",
+            "configTitle": "Settings",
+            "configSubtitle": "Customize your technical wallpaper",
+            "categoryLabel": "1. CATEGORY",
+            "contentLabel": "2. CONTENT",
+            "themeLabel": "3. VISUAL THEME",
+            "resolutionLabel": "4. OUTPUT RESOLUTION",
+            "exportButton": "Download High-Res PNG",
+            "previewStatus": "Preview",
+            "viewOnGithub": "View on GitHub",
+            "noContent": "No content available",
+            "loadError": "Error loading data: ",
+            "sheetNotFound": "Cheat sheet not found.",
+            "generating": "Generating Image...",
+            "exportError": "An error occurred while generating the image. Try again.",
+            "catalog": {
+                "linux": "Linux Terminal",
+                "linux.navegacao": "Navigation and Files",
+                "linux.fhs": "File Hierarchy (FHS)",
+                "git": "Git & GitHub",
+                "git.basico": "Essential Workflow",
+                "docker": "Docker & Containers",
+                "docker.basico": "Essential Commands"
+            }
+        },
+        "es-ES": {
+            "title": "sallesfx / sheets - Configura el fondo de pantalla",
+            "configTitle": "Configuración",
+            "configSubtitle": "Personaliza tu fondo de pantalla técnico",
+            "categoryLabel": "1. CATEGORÍA",
+            "contentLabel": "2. CONTENIDO",
+            "themeLabel": "3. TEMA VISUAL",
+            "resolutionLabel": "4. RESOLUCIÓN DE SALIDA",
+            "exportButton": "Descargar PNG en alta resolución",
+            "previewStatus": "Vista previa",
+            "viewOnGithub": "Ver en GitHub",
+            "noContent": "No hay contenido disponible",
+            "loadError": "Error al cargar los datos: ",
+            "sheetNotFound": "Hoja de referencia no encontrada.",
+            "generating": "Generando imagen...",
+            "exportError": "Se produjo un error al generar la imagen. Inténtalo de nuevo.",
+            "catalog": {
+                "linux": "Terminal Linux",
+                "linux.navegacao": "Navegación y Archivos",
+                "linux.fhs": "Jerarquía de Archivos (FHS)",
+                "git": "Git y GitHub",
+                "git.basico": "Flujo de trabajo esencial",
+                "docker": "Docker y contenedores",
+                "docker.basico": "Comandos fundamentales"
+            }
+        },
+        "de-DE": {
+            "title": "sallesfx / sheets - Wallpaper konfigurieren",
+            "configTitle": "Einstellungen",
+            "configSubtitle": "Passen Sie Ihr technisches Wallpaper an",
+            "categoryLabel": "1. KATEGORIE",
+            "contentLabel": "2. INHALT",
+            "themeLabel": "3. VISUELLES THEMA",
+            "resolutionLabel": "4. AUSGABEAUFLÖSUNG",
+            "exportButton": "PNG in hoher Auflösung herunterladen",
+            "previewStatus": "Vorschau",
+            "viewOnGithub": "Auf GitHub ansehen",
+            "noContent": "Kein Inhalt verfügbar",
+            "loadError": "Fehler beim Laden der Daten: ",
+            "sheetNotFound": "Cheat Sheet nicht gefunden.",
+            "generating": "Bild wird generiert...",
+            "exportError": "Beim Generieren des Bildes ist ein Fehler aufgetreten. Versuchen Sie es erneut.",
+            "catalog": {
+                "linux": "Linux-Terminal",
+                "linux.navegacao": "Navigation und Dateien",
+                "linux.fhs": "Dateihierarchie (FHS)",
+                "git": "Git & GitHub",
+                "git.basico": "Wesentlicher Arbeitsablauf",
+                "docker": "Docker & Container",
+                "docker.basico": "Grundlegende Befehle"
+            }
+        },
+        "fr-FR": {
+            "title": "sallesfx / sheets - Configurer le fond d'écran",
+            "configTitle": "Configuration",
+            "configSubtitle": "Personnalisez votre fond d'écran technique",
+            "categoryLabel": "1. CATÉGORIE",
+            "contentLabel": "2. CONTENU",
+            "themeLabel": "3. THÈME VISUEL",
+            "resolutionLabel": "4. RÉSOLUTION DE SORTIE",
+            "exportButton": "Télécharger le PNG en haute résolution",
+            "previewStatus": "Aperçu",
+            "viewOnGithub": "Voir sur GitHub",
+            "noContent": "Aucun contenu disponible",
+            "loadError": "Erreur lors du chargement des données : ",
+            "sheetNotFound": "Aide-mémoire introuvable.",
+            "generating": "Génération de l'image...",
+            "exportError": "Une erreur est survenue lors de la génération de l'image. Réessayez.",
+            "catalog": {
+                "linux": "Terminal Linux",
+                "linux.navegacao": "Navigation et fichiers",
+                "linux.fhs": "Hiérarchie des fichiers (FHS)",
+                "git": "Git & GitHub",
+                "git.basico": "Flux de travail essentiel",
+                "docker": "Docker et conteneurs",
+                "docker.basico": "Commandes fondamentales"
+            }
+        }
+    };
+
+    let currentLocale = 'pt-BR';
 
     // Mapeamento de dimensões para exportação em pixels reais
     const RESOLUTIONS = {
@@ -24,22 +173,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Catálogo de Cheat Sheets (Baseado nos JSONs da pasta /data/)
     const CATALOG = {
         linux: {
-            name: 'Linux Terminal',
             subcategories: [
-                { id: 'navegacao', name: 'Navegação e Arquivos' },
-                { id: 'fhs', name: 'Hierarquia de Arquivos (FHS)' }
+                { id: 'navegacao' },
+                { id: 'fhs' }
             ]
         },
         git: {
-            name: 'Git & GitHub',
             subcategories: [
-                { id: 'basico', name: 'Fluxo de Trabalho Essencial' }
+                { id: 'basico' }
             ]
         },
         docker: {
-            name: 'Docker & Containers',
             subcategories: [
-                { id: 'basico', name: 'Comandos Fundamentais' }
+                { id: 'basico' }
             ]
         }
     };
@@ -52,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Object.keys(CATALOG).forEach(catKey => {
             const opt = document.createElement('option');
             opt.value = catKey;
-            opt.textContent = CATALOG[catKey].name;
+            opt.textContent = UI[currentLocale].catalog[catKey];
             categorySelect.appendChild(opt);
         });
     }
@@ -67,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!category || !category.subcategories || category.subcategories.length === 0) {
             const opt = document.createElement('option');
             opt.value = '';
-            opt.textContent = 'Nenhum conteúdo disponível';
+            opt.textContent = UI[currentLocale].noContent;
             opt.disabled = true;
             subcategorySelect.appendChild(opt);
             return;
@@ -76,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category.subcategories.forEach(sub => {
             const opt = document.createElement('option');
             opt.value = sub.id;
-            opt.textContent = sub.name;
+            opt.textContent = UI[currentLocale].catalog[`${categoryKey}.${sub.id}`];
             subcategorySelect.appendChild(opt);
         });
     }
@@ -116,24 +262,46 @@ document.addEventListener('DOMContentLoaded', () => {
     /**
      * Carrega os dados JSON do cheat sheet e injeta no container do preview
      */
-    async function loadSheetData(category, subcategory) {
+    async function loadSheetData(category, subcategory, locale) {
         if (!category || !subcategory) return;
 
-        const dataPath = `data/${category}/${subcategory}.json`;
+        const dataPath = `data/${locale}/${category}/${subcategory}.json`;
 
+        let sheetData = null;
         try {
             const response = await fetch(dataPath);
-            if (!response.ok) {
+            if (response.ok) {
+                sheetData = await response.json();
+            }
+        } catch (error) {
+            sheetData = null;
+        }
+
+        if (!sheetData) {
+            if (locale === 'pt-BR') {
                 return await loadLegacyTemplate(category, subcategory);
             }
+            const fallbackPath = `data/pt-BR/${category}/${subcategory}.json`;
+            try {
+                const response = await fetch(fallbackPath);
+                if (response.ok) {
+                    sheetData = await response.json();
+                }
+            } catch (error) {
+                sheetData = null;
+            }
+            if (!sheetData) {
+                return await loadLegacyTemplate(category, subcategory);
+            }
+        }
 
-            const sheetData = await response.json();
+        try {
             previewContainer.innerHTML = renderSheet(sheetData);
         } catch (error) {
             console.error('Erro ao carregar dados do cheat sheet:', error);
             previewContainer.innerHTML = `
                 <div style="color: #ef4444; padding: 2rem; text-align: center; font-family: monospace;">
-                  Erro ao carregar os dados: ${dataPath}
+                  ${UI[locale].loadError} ${dataPath}
                 </div>
             `;
         }
@@ -152,7 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (err) {
             previewContainer.innerHTML = `
                 <div style="color: #ef4444; padding: 2rem; text-align: center; font-family: monospace;">
-                  Cheat sheet não encontrado.
+                  ${UI[currentLocale].sheetNotFound}
                 </div>
             `;
         }
@@ -176,8 +344,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const subcategory = subcategorySelect.value;
 
         // Feedback visual no botão durante o processamento
-        const originalBtnText = btnExport.innerText;
-        btnExport.innerText = 'Gerando Imagem...';
+        const originalBtnText = uiExportLabel.textContent;
+        uiExportLabel.textContent = UI[currentLocale].generating;
         btnExport.disabled = true;
 
         try {
@@ -251,31 +419,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } catch (error) {
             console.error('Erro ao exportar wallpaper:', error);
-            alert('Ocorreu um erro ao gerar a imagem. Tente novamente.');
+            alert(UI[currentLocale].exportError);
         } finally {
             // Restaura o botão
-            btnExport.innerText = originalBtnText;
+            uiExportLabel.textContent = originalBtnText;
             btnExport.disabled = false;
         }
+    }
+
+    /**
+     * Aplica o locale ativo na interface e recarrega os dados
+     */
+    function applyLocale(locale) {
+        const active = LOCALES.includes(locale) ? locale : 'pt-BR';
+        const dict = UI[active];
+        currentLocale = active;
+
+        document.documentElement.lang = active;
+        document.title = dict.title;
+        uiTitle.textContent = dict.configTitle;
+        uiSubtitle.textContent = dict.configSubtitle;
+        uiCategoryLabel.textContent = dict.categoryLabel;
+        uiContentLabel.textContent = dict.contentLabel;
+        uiThemeLabel.textContent = dict.themeLabel;
+        uiResolutionLabel.textContent = dict.resolutionLabel;
+        uiExportLabel.textContent = dict.exportButton;
+        uiPreviewStatus.textContent = dict.previewStatus;
+        uiGithub.textContent = dict.viewOnGithub;
+        langSelect.value = active;
+        localStorage.setItem(LOCALE_STORAGE_KEY, active);
+
+        const selectedCategory = categorySelect.value;
+        initCategorySelect();
+        categorySelect.value = selectedCategory;
+        updateSubcategoryOptions(categorySelect.value);
+        loadSheetData(categorySelect.value, subcategorySelect.value, active);
     }
 
     // Event Listeners
     themeSelect.addEventListener('change', (e) => updateTheme(e.target.value));
 
+    langSelect.addEventListener('change', (e) => applyLocale(e.target.value));
+
     categorySelect.addEventListener('change', () => {
         updateSubcategoryOptions(categorySelect.value);
-        loadSheetData(categorySelect.value, subcategorySelect.value);
+        loadSheetData(categorySelect.value, subcategorySelect.value, currentLocale);
     });
 
     subcategorySelect.addEventListener('change', () => {
-        loadSheetData(categorySelect.value, subcategorySelect.value);
+        loadSheetData(categorySelect.value, subcategorySelect.value, currentLocale);
     });
 
     btnExport.addEventListener('click', exportWallpaper);
 
     // Inicialização do App
-    initCategorySelect();
-    updateSubcategoryOptions(categorySelect.value);
-    loadSheetData(categorySelect.value, subcategorySelect.value);
+    const storedLocale = localStorage.getItem(LOCALE_STORAGE_KEY);
+    const initialLocale = LOCALES.includes(storedLocale) ? storedLocale : 'pt-BR';
+    applyLocale(initialLocale);
     updateTheme(themeSelect.value);
 });

@@ -1,0 +1,45 @@
+{
+  "id": "fhs",
+  "category": "linux",
+  "title": "LINUX FILESYSTEM HIERARCHY (FHS)",
+  "subtitle": "Standard Linux Directory Structure • <span class=\"sheet-domain\">sallesfx.com.br</span>",
+  "cards": [
+    {
+      "header": "📂 1. System and Executables",
+      "items": [
+        { "cmd": "/bin", "desc": "Essential system binaries and commands (ls, cd, cp)." },
+        { "cmd": "/sbin", "desc": "System administration commands (reboot, fdisk)." },
+        { "cmd": "/usr/bin", "desc": "User programs and utilities." },
+        { "cmd": "/opt", "desc": "Additional and third-party installed software." }
+      ]
+    },
+    {
+      "header": "⚙️ 2. Configuration and Data",
+      "items": [
+        { "cmd": "/etc", "desc": "System and service configuration files." },
+        { "cmd": "/var", "desc": "Variable files (logs, print spools, databases)." },
+        { "cmd": "/srv", "desc": "Data for services served by the system (web, ftp)." },
+        { "cmd": "/tmp", "desc": "Temporary files deleted on reboot." }
+      ]
+    },
+    {
+      "header": "👤 3. Users and Devices",
+      "items": [
+        { "cmd": "/home", "desc": "Personal directories of regular users." },
+        { "cmd": "/root", "desc": "Home directory of the superuser (root)." },
+        { "cmd": "/dev", "desc": "Hardware device files (disks, tty)." },
+        { "cmd": "/media", "desc": "Mount point for removable media (USB)." }
+      ]
+    },
+    {
+      "header": "🧠 4. Kernel and Processes",
+      "items": [
+        { "cmd": "/proc", "desc": "Virtual filesystems with process and CPU data." },
+        { "cmd": "/sys", "desc": "Kernel information about devices and drivers." },
+        { "cmd": "/boot", "desc": "Bootloader files (GRUB, vmlinuz kernel)." },
+        { "cmd": "/lib", "desc": "Essential shared system libraries." }
+      ]
+    }
+  ],
+  "footer": "Built for continuous learning • <strong>sallesfx.com.br</strong>"
+}
