@@ -1,0 +1,45 @@
+{
+  "id": "fhs",
+  "category": "linux",
+  "title": "LINUX DATEISYSTEMHIERARCHIE (FHS)",
+  "subtitle": "Standard-Verzeichnisstruktur von Linux • <span class=\"sheet-domain\">sallesfx.com.br</span>",
+  "cards": [
+    {
+      "header": "📂 1. System und Programme",
+      "items": [
+        { "cmd": "/bin", "desc": "Wesentliche System-Binärdateien und -Befehle (ls, cd, cp)." },
+        { "cmd": "/sbin", "desc": "Systemverwaltungsbefehle (reboot, fdisk)." },
+        { "cmd": "/usr/bin", "desc": "Programme und Dienstprogramme der Benutzer." },
+        { "cmd": "/opt", "desc": "Zusätzliche Software und Software von Dritten." }
+      ]
+    },
+    {
+      "header": "⚙️ 2. Konfiguration und Daten",
+      "items": [
+        { "cmd": "/etc", "desc": "Konfigurationsdateien des Systems und der Dienste." },
+        { "cmd": "/var", "desc": "Variable Dateien (Logs, Druckspooler, Datenbanken)." },
+        { "cmd": "/srv", "desc": "Daten von Diensten, die das System bereitstellt (web, ftp)." },
+        { "cmd": "/tmp", "desc": "Temporäre Dateien, die beim Neustart gelöscht werden." }
+      ]
+    },
+    {
+      "header": "👤 3. Benutzer und Geräte",
+      "items": [
+        { "cmd": "/home", "desc": "Persönliche Verzeichnisse der normalen Benutzer." },
+        { "cmd": "/root", "desc": "Persönliches Verzeichnis des Superusers (root)." },
+        { "cmd": "/dev", "desc": "Gerätedateien der Hardware (Festplatten, tty)." },
+        { "cmd": "/media", "desc": "Einhängepunkt für Wechselmedien (USB)." }
+      ]
+    },
+    {
+      "header": "🧠 4. Kernel und Prozesse",
+      "items": [
+        { "cmd": "/proc", "desc": "Virtuelle Dateisysteme mit Prozess- und CPU-Daten." },
+        { "cmd": "/sys", "desc": "Kernel-Informationen über Geräte und Treiber." },
+        { "cmd": "/boot", "desc": "Dateien des Bootloaders (GRUB, Kernel vmlinuz)." },
+        { "cmd": "/lib", "desc": "Wesentliche gemeinsame Systembibliotheken." }
+      ]
+    }
+  ],
+  "footer": "Entwickelt für kontinuierliches Lernen • <strong>sallesfx.com.br</strong>"
+}

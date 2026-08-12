@@ -1,0 +1,42 @@
+{
+  "id": "navegacao",
+  "category": "linux",
+  "title": "LINUX TERMINAL SPICKZETTEL",
+  "subtitle": "Schnellübersicht zur Navigation und Dateiverwaltung • <span class=\"sheet-domain\">sallesfx.com.br</span>",
+  "cards": [
+    {
+      "header": "📁 1. Navigieren und Finden",
+      "items": [
+        { "cmd": "pwd", "desc": "Zeigt den absoluten Pfad des aktuellen Verzeichnisses." },
+        { "cmd": "cd <span class=\"cmd-flag\">~/pasta</span>", "desc": "Wechselt in einen Ordner im Benutzerverzeichnis." },
+        { "cmd": "cd <span class=\"cmd-flag\">-</span>", "desc": "Kehrt zum zuletzt besuchten Verzeichnis zurück." },
+        { "cmd": "cd <span class=\"cmd-flag\">..</span>", "desc": "Wechselt eine Ebene nach oben in das Elternverzeichnis." }
+      ]
+    },
+    {
+      "header": "🔍 2. Inhalt Auflisten",
+      "items": [
+        { "cmd": "ls <span class=\"cmd-flag\">-lh</span>", "desc": "Listet Details mit lesbaren Größen (KB, MB)." },
+        { "cmd": "ls <span class=\"cmd-flag\">-la</span>", "desc": "Zeigt alle Dateien, einschließlich versteckter (.)." },
+        { "cmd": "tree <span class=\"cmd-flag\">-L 2</span>", "desc": "Zeigt die Ordnerstruktur bis Ebene 2." }
+      ]
+    },
+    {
+      "header": "🛠️ 3. Erstellen und Verschieben",
+      "items": [
+        { "cmd": "mkdir <span class=\"cmd-flag\">-p a/b/c</span>", "desc": "Erstellt verschachtelte Ordner und Unterordner." },
+        { "cmd": "cp <span class=\"cmd-flag\">-r orig/ dest/</span>", "desc": "Kopiert Verzeichnisse und Inhalte rekursiv." },
+        { "cmd": "mv <span class=\"cmd-flag\">arq.txt ~/docs/</span>", "desc": "Verschiebt oder benennt Dateien und Ordner um." }
+      ]
+    },
+    {
+      "header": "⚡ 4. Sicher Entfernen",
+      "items": [
+        { "cmd": "rm <span class=\"cmd-flag\">arquivo.txt</span>", "desc": "Entfernt eine normale Datei dauerhaft." },
+        { "cmd": "rm <span class=\"cmd-flag\">-ri pasta/</span>", "desc": "Entfernt ein Verzeichnis mit Rückfrage pro Eintrag." },
+        { "cmd": "rm <span class=\"cmd-flag\">-rf pasta/</span>", "desc": "Entfernt ohne Rückfrage erzwungen (Vorsicht!)." }
+      ]
+    }
+  ],
+  "footer": "Entwickelt für kontinuierliches Lernen • <strong>sallesfx.com.br</strong>"
+}

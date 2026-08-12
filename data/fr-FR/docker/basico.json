@@ -1,0 +1,41 @@
+{
+  "id": "basico",
+  "category": "docker",
+  "title": "ANTI-SÈCHE DOCKER ET CONTENEURS",
+  "subtitle": "Commandes Fondamentales de Gestion des Conteneurs • <span class=\"sheet-domain\">sallesfx.com.br</span>",
+  "cards": [
+    {
+      "header": "📦 1. Images Docker",
+      "items": [
+        { "cmd": "docker pull <span class=\"cmd-flag\">imagem</span>", "desc": "Télécharge une image depuis Docker Hub." },
+        { "cmd": "docker images", "desc": "Liste toutes les images téléchargées localement." },
+        { "cmd": "docker rmi <span class=\"cmd-flag\">id_imagem</span>", "desc": "Supprime une image du système local." }
+      ]
+    },
+    {
+      "header": "🚢 2. Exécuter des Conteneurs",
+      "items": [
+        { "cmd": "docker run <span class=\"cmd-flag\">-d -p 80:80 nginx</span>", "desc": "Exécute un conteneur en arrière-plan en mappant les ports." },
+        { "cmd": "docker ps <span class=\"cmd-flag\">-a</span>", "desc": "Liste tous les conteneurs (actifs et arrêtés)." },
+        { "cmd": "docker exec <span class=\"cmd-flag\">-it nome bash</span>", "desc": "Accède au terminal d'un conteneur en cours d'exécution." }
+      ]
+    },
+    {
+      "header": "🛑 3. Cycle de Vie et Journaux",
+      "items": [
+        { "cmd": "docker stop <span class=\"cmd-flag\">container</span>", "desc": "Arrête l'exécution d'un conteneur actif." },
+        { "cmd": "docker start <span class=\"cmd-flag\">container</span>", "desc": "Démarre un conteneur précédemment arrêté." },
+        { "cmd": "docker logs <span class=\"cmd-flag\">-f container</span>", "desc": "Suit les journaux en temps réel." }
+      ]
+    },
+    {
+      "header": "🧹 4. Nettoyage et Compose",
+      "items": [
+        { "cmd": "docker rm <span class=\"cmd-flag\">container</span>", "desc": "Supprime un conteneur arrêté." },
+        { "cmd": "docker system prune <span class=\"cmd-flag\">-a</span>", "desc": "Supprime les conteneurs, réseaux et images inutilisés." },
+        { "cmd": "docker compose up <span class=\"cmd-flag\">-d</span>", "desc": "Démarre l'application définie dans docker-compose.yml." }
+      ]
+    }
+  ],
+  "footer": "Développé pour un apprentissage continu • <strong>sallesfx.com.br</strong>"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "navegacao",
+  "category": "linux",
+  "title": "HOJA DE REFERENCIA DEL TERMINAL LINUX",
+  "subtitle": "Guía rápida de navegación y manipulación de archivos • <span class=\"sheet-domain\">sallesfx.com.br</span>",
+  "cards": [
+    {
+      "header": "📁 1. Navegar y Localizar",
+      "items": [
+        { "cmd": "pwd", "desc": "Muestra la ruta absoluta del directorio actual." },
+        { "cmd": "cd <span class=\"cmd-flag\">~/pasta</span>", "desc": "Navega a la carpeta en el directorio personal." },
+        { "cmd": "cd <span class=\"cmd-flag\">-</span>", "desc": "Vuelve al último directorio accedido." },
+        { "cmd": "cd <span class=\"cmd-flag\">..</span>", "desc": "Sube un nivel al directorio padre." }
+      ]
+    },
+    {
+      "header": "🔍 2. Listar Contenido",
+      "items": [
+        { "cmd": "ls <span class=\"cmd-flag\">-lh</span>", "desc": "Lista detalles con tamaños legibles (KB, MB)." },
+        { "cmd": "ls <span class=\"cmd-flag\">-la</span>", "desc": "Muestra todos los archivos, incluidos los ocultos (.)." },
+        { "cmd": "tree <span class=\"cmd-flag\">-L 2</span>", "desc": "Muestra la estructura de carpetas hasta el nivel 2." }
+      ]
+    },
+    {
+      "header": "🛠️ 3. Crear y Mover",
+      "items": [
+        { "cmd": "mkdir <span class=\"cmd-flag\">-p a/b/c</span>", "desc": "Crea carpetas y subcarpetas anidadas." },
+        { "cmd": "cp <span class=\"cmd-flag\">-r orig/ dest/</span>", "desc": "Copia directorios y contenidos de forma recursiva." },
+        { "cmd": "mv <span class=\"cmd-flag\">arq.txt ~/docs/</span>", "desc": "Mueve o renombra archivos y carpetas." }
+      ]
+    },
+    {
+      "header": "⚡ 4. Eliminar con Seguridad",
+      "items": [
+        { "cmd": "rm <span class=\"cmd-flag\">arquivo.txt</span>", "desc": "Elimina un archivo común de forma permanente." },
+        { "cmd": "rm <span class=\"cmd-flag\">-ri pasta/</span>", "desc": "Elimina un directorio pidiendo confirmación por elemento." },
+        { "cmd": "rm <span class=\"cmd-flag\">-rf pasta/</span>", "desc": "Fuerza la eliminación sin confirmación (¡Cuidado!)." }
+      ]
+    }
+  ],
+  "footer": "Desarrollado para el aprendizaje continuo • <strong>sallesfx.com.br</strong>"
+}

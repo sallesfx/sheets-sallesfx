@@ -1,0 +1,42 @@
+{
+  "id": "navegacao",
+  "category": "linux",
+  "title": "LINUX TERMINAL CHEAT SHEET",
+  "subtitle": "Quick Guide to Navigation and File Management • <span class=\"sheet-domain\">sallesfx.com.br</span>",
+  "cards": [
+    {
+      "header": "📁 1. Navigate and Locate",
+      "items": [
+        { "cmd": "pwd", "desc": "Shows the absolute path of the current directory." },
+        { "cmd": "cd <span class=\"cmd-flag\">~/pasta</span>", "desc": "Navigates to a folder in the home directory." },
+        { "cmd": "cd <span class=\"cmd-flag\">-</span>", "desc": "Returns to the last accessed directory." },
+        { "cmd": "cd <span class=\"cmd-flag\">..</span>", "desc": "Moves up one level to the parent directory." }
+      ]
+    },
+    {
+      "header": "🔍 2. List Content",
+      "items": [
+        { "cmd": "ls <span class=\"cmd-flag\">-lh</span>", "desc": "Lists details with human-readable sizes (KB, MB)." },
+        { "cmd": "ls <span class=\"cmd-flag\">-la</span>", "desc": "Shows all files, including hidden ones (.)." },
+        { "cmd": "tree <span class=\"cmd-flag\">-L 2</span>", "desc": "Shows the folder structure up to level 2." }
+      ]
+    },
+    {
+      "header": "🛠️ 3. Create and Move",
+      "items": [
+        { "cmd": "mkdir <span class=\"cmd-flag\">-p a/b/c</span>", "desc": "Creates nested folders and subfolders." },
+        { "cmd": "cp <span class=\"cmd-flag\">-r orig/ dest/</span>", "desc": "Copies directories and contents recursively." },
+        { "cmd": "mv <span class=\"cmd-flag\">arq.txt ~/docs/</span>", "desc": "Moves or renames files and folders." }
+      ]
+    },
+    {
+      "header": "⚡ 4. Safe Removal",
+      "items": [
+        { "cmd": "rm <span class=\"cmd-flag\">arquivo.txt</span>", "desc": "Permanently removes a regular file." },
+        { "cmd": "rm <span class=\"cmd-flag\">-ri pasta/</span>", "desc": "Removes a directory asking for confirmation per item." },
+        { "cmd": "rm <span class=\"cmd-flag\">-rf pasta/</span>", "desc": "Forces removal without confirmation (Careful!)." }
+      ]
+    }
+  ],
+  "footer": "Built for continuous learning • <strong>sallesfx.com.br</strong>"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "basico",
+  "category": "git",
+  "title": "GIT & GITHUB CHEAT SHEET",
+  "subtitle": "Essential Version Control Workflow • <span class=\"sheet-domain\">sallesfx.com.br</span>",
+  "cards": [
+    {
+      "header": "🚀 1. Initialize and Clone",
+      "items": [
+        { "cmd": "git init", "desc": "Initializes a new local Git repository." },
+        { "cmd": "git clone <span class=\"cmd-flag\">url</span>", "desc": "Clones an existing remote repository." },
+        { "cmd": "git status", "desc": "Shows the state of modified files." }
+      ]
+    },
+    {
+      "header": "📝 2. Commit and History",
+      "items": [
+        { "cmd": "git add <span class=\"cmd-flag\">.</span>", "desc": "Adds all changes to the Staging Area." },
+        { "cmd": "git commit <span class=\"cmd-flag\">-m \"msg\"</span>", "desc": "Saves the snapshot with a descriptive message." },
+        { "cmd": "git log <span class=\"cmd-flag\">--oneline</span>", "desc": "Shows the commit history in a concise way." }
+      ]
+    },
+    {
+      "header": "🌿 3. Branches and Merge",
+      "items": [
+        { "cmd": "git checkout <span class=\"cmd-flag\">-b nome</span>", "desc": "Creates and switches to a new branch." },
+        { "cmd": "git switch <span class=\"cmd-flag\">main</span>", "desc": "Switches to the specified branch." },
+        { "cmd": "git merge <span class=\"cmd-flag\">feature</span>", "desc": "Merges the specified branch into the current one." }
+      ]
+    },
+    {
+      "header": "🌐 4. Remote Sync",
+      "items": [
+        { "cmd": "git pull <span class=\"cmd-flag\">origin main</span>", "desc": "Downloads and merges changes from the remote server." },
+        { "cmd": "git push <span class=\"cmd-flag\">origin main</span>", "desc": "Sends local commits to the remote repository." },
+        { "cmd": "git stash", "desc": "Temporarily stores changes without committing." }
+      ]
+    }
+  ],
+  "footer": "Built for continuous learning • <strong>sallesfx.com.br</strong>"
+}
