@@ -1,0 +1,45 @@
+{
+  "id": "fhs",
+  "category": "linux",
+  "title": "HIÉRARCHIE DU SYSTÈME DE FICHIERS LINUX (FHS)",
+  "subtitle": "Structure Standard des Répertoires Linux • <span class=\"sheet-domain\">sallesfx.com.br</span>",
+  "cards": [
+    {
+      "header": "📂 1. Système et Exécutables",
+      "items": [
+        { "cmd": "/bin", "desc": "Binaires et commandes essentiels du système (ls, cd, cp)." },
+        { "cmd": "/sbin", "desc": "Commandes d'administration du système (reboot, fdisk)." },
+        { "cmd": "/usr/bin", "desc": "Programmes et utilitaires des utilisateurs." },
+        { "cmd": "/opt", "desc": "Logiciels supplémentaires et tiers installés." }
+      ]
+    },
+    {
+      "header": "⚙️ 2. Configuration et Données",
+      "items": [
+        { "cmd": "/etc", "desc": "Fichiers de configuration du système et des services." },
+        { "cmd": "/var", "desc": "Fichiers variables (journaux, files d'impression, bases de données)." },
+        { "cmd": "/srv", "desc": "Données des services fournis par le système (web, ftp)." },
+        { "cmd": "/tmp", "desc": "Fichiers temporaires supprimés au redémarrage." }
+      ]
+    },
+    {
+      "header": "👤 3. Utilisateurs et Périphériques",
+      "items": [
+        { "cmd": "/home", "desc": "Répertoires personnels des utilisateurs ordinaires." },
+        { "cmd": "/root", "desc": "Répertoire personnel du superutilisateur (root)." },
+        { "cmd": "/dev", "desc": "Fichiers de périphériques matériels (disques, tty)." },
+        { "cmd": "/media", "desc": "Point de montage pour les médias amovibles (USB)." }
+      ]
+    },
+    {
+      "header": "🧠 4. Noyau et Processus",
+      "items": [
+        { "cmd": "/proc", "desc": "Systèmes de fichiers virtuels avec les données des processus et du CPU." },
+        { "cmd": "/sys", "desc": "Informations du noyau sur les périphériques et les pilotes." },
+        { "cmd": "/boot", "desc": "Fichiers du chargeur de démarrage (GRUB, noyau vmlinuz)." },
+        { "cmd": "/lib", "desc": "Bibliothèques partagées essentielles du système." }
+      ]
+    }
+  ],
+  "footer": "Développé pour un apprentissage continu • <strong>sallesfx.com.br</strong>"
+}

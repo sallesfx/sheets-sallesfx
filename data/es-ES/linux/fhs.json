@@ -1,0 +1,45 @@
+{
+  "id": "fhs",
+  "category": "linux",
+  "title": "JERARQUÍA DE ARCHIVOS DE LINUX (FHS)",
+  "subtitle": "Estructura Estándar de Directorios de Linux • <span class=\"sheet-domain\">sallesfx.com.br</span>",
+  "cards": [
+    {
+      "header": "📂 1. Sistema y Ejecutables",
+      "items": [
+        { "cmd": "/bin", "desc": "Binarios y comandos esenciales del sistema (ls, cd, cp)." },
+        { "cmd": "/sbin", "desc": "Comandos de administración del sistema (reboot, fdisk)." },
+        { "cmd": "/usr/bin", "desc": "Programas y utilidades de los usuarios." },
+        { "cmd": "/opt", "desc": "Software adicional y de terceros instalado." }
+      ]
+    },
+    {
+      "header": "⚙️ 2. Configuración y Datos",
+      "items": [
+        { "cmd": "/etc", "desc": "Archivos de configuración del sistema y de los servicios." },
+        { "cmd": "/var", "desc": "Archivos variables (logs, colas de impresión, bases de datos)." },
+        { "cmd": "/srv", "desc": "Datos de servicios ofrecidos por el sistema (web, ftp)." },
+        { "cmd": "/tmp", "desc": "Archivos temporales que se eliminan al reiniciar." }
+      ]
+    },
+    {
+      "header": "👤 3. Usuarios y Dispositivos",
+      "items": [
+        { "cmd": "/home", "desc": "Directorios personales de los usuarios normales." },
+        { "cmd": "/root", "desc": "Directorio personal del superusuario (root)." },
+        { "cmd": "/dev", "desc": "Archivos de dispositivos de hardware (discos, tty)." },
+        { "cmd": "/media", "desc": "Punto de montaje para medios extraíbles (USB)." }
+      ]
+    },
+    {
+      "header": "🧠 4. Kernel y Procesos",
+      "items": [
+        { "cmd": "/proc", "desc": "Sistemas de archivos virtuales con datos de procesos y CPU." },
+        { "cmd": "/sys", "desc": "Información del kernel sobre dispositivos y controladores." },
+        { "cmd": "/boot", "desc": "Archivos del cargador de arranque (GRUB, kernel vmlinuz)." },
+        { "cmd": "/lib", "desc": "Bibliotecas compartidas esenciales del sistema." }
+      ]
+    }
+  ],
+  "footer": "Desarrollado para el aprendizaje continuo • <strong>sallesfx.com.br</strong>"
+}

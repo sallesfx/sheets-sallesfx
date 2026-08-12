@@ -95,6 +95,14 @@ Abra um **Pull Request (PR)** para a branch `develop`.
 
 ---
 
+## 🤝 Contribuidores
+
+Agradecemos a todos que ajudam a melhorar o **Sheets**:
+
+- [@RawNuke](https://github.com/RawNuke) — Implementação da arquitetura i18n e traduções (PT, EN, ES, DE, FR).
+
+---
+
 ## 🔗 Integração com o Ecossistema
 
 Este projeto faz parte do ecossistema de ferramentas do [sallesfx.com.br](https://sallesfx.com.br) e pode ser acessado na seção [/arsenal](https://sallesfx.com.br/arsenal/).

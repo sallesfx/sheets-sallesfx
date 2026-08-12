@@ -1,0 +1,42 @@
+{
+  "id": "navegacao",
+  "category": "linux",
+  "title": "ANTI-SÈCHE DU TERMINAL LINUX",
+  "subtitle": "Guide rapide de navigation et de gestion des fichiers • <span class=\"sheet-domain\">sallesfx.com.br</span>",
+  "cards": [
+    {
+      "header": "📁 1. Naviguer et Localiser",
+      "items": [
+        { "cmd": "pwd", "desc": "Affiche le chemin absolu du répertoire courant." },
+        { "cmd": "cd <span class=\"cmd-flag\">~/pasta</span>", "desc": "Navigue vers un dossier du répertoire personnel." },
+        { "cmd": "cd <span class=\"cmd-flag\">-</span>", "desc": "Revient au dernier répertoire visité." },
+        { "cmd": "cd <span class=\"cmd-flag\">..</span>", "desc": "Monte d'un niveau vers le répertoire parent." }
+      ]
+    },
+    {
+      "header": "🔍 2. Lister le Contenu",
+      "items": [
+        { "cmd": "ls <span class=\"cmd-flag\">-lh</span>", "desc": "Liste les détails avec des tailles lisibles (Ko, Mo)." },
+        { "cmd": "ls <span class=\"cmd-flag\">-la</span>", "desc": "Affiche tous les fichiers, y compris les cachés (.)." },
+        { "cmd": "tree <span class=\"cmd-flag\">-L 2</span>", "desc": "Affiche la structure des dossiers jusqu'au niveau 2." }
+      ]
+    },
+    {
+      "header": "🛠️ 3. Créer et Déplacer",
+      "items": [
+        { "cmd": "mkdir <span class=\"cmd-flag\">-p a/b/c</span>", "desc": "Crée des dossiers et sous-dossiers imbriqués." },
+        { "cmd": "cp <span class=\"cmd-flag\">-r orig/ dest/</span>", "desc": "Copie récursivement les dossiers et leur contenu." },
+        { "cmd": "mv <span class=\"cmd-flag\">arq.txt ~/docs/</span>", "desc": "Déplace ou renomme les fichiers et dossiers." }
+      ]
+    },
+    {
+      "header": "⚡ 4. Supprimer en Toute Sécurité",
+      "items": [
+        { "cmd": "rm <span class=\"cmd-flag\">arquivo.txt</span>", "desc": "Supprime définitivement un fichier ordinaire." },
+        { "cmd": "rm <span class=\"cmd-flag\">-ri pasta/</span>", "desc": "Supprime un dossier en demandant confirmation par élément." },
+        { "cmd": "rm <span class=\"cmd-flag\">-rf pasta/</span>", "desc": "Force la suppression sans confirmation (Attention !)." }
+      ]
+    }
+  ],
+  "footer": "Développé pour un apprentissage continu • <strong>sallesfx.com.br</strong>"
+}

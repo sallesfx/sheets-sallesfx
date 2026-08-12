@@ -1,0 +1,41 @@
+{
+  "id": "basico",
+  "category": "docker",
+  "title": "HOJA DE REFERENCIA DE DOCKER Y CONTENEDORES",
+  "subtitle": "Comandos Fundamentales para Gestionar Contenedores • <span class=\"sheet-domain\">sallesfx.com.br</span>",
+  "cards": [
+    {
+      "header": "📦 1. Imágenes de Docker",
+      "items": [
+        { "cmd": "docker pull <span class=\"cmd-flag\">imagem</span>", "desc": "Descarga una imagen de Docker Hub." },
+        { "cmd": "docker images", "desc": "Lista todas las imágenes descargadas localmente." },
+        { "cmd": "docker rmi <span class=\"cmd-flag\">id_imagem</span>", "desc": "Elimina una imagen del sistema local." }
+      ]
+    },
+    {
+      "header": "🚢 2. Ejecutar Contenedores",
+      "items": [
+        { "cmd": "docker run <span class=\"cmd-flag\">-d -p 80:80 nginx</span>", "desc": "Ejecuta un contenedor en segundo plano mapeando puertos." },
+        { "cmd": "docker ps <span class=\"cmd-flag\">-a</span>", "desc": "Lista todos los contenedores (activos y detenidos)." },
+        { "cmd": "docker exec <span class=\"cmd-flag\">-it nome bash</span>", "desc": "Accede a la terminal dentro de un contenedor en ejecución." }
+      ]
+    },
+    {
+      "header": "🛑 3. Ciclo de Vida y Logs",
+      "items": [
+        { "cmd": "docker stop <span class=\"cmd-flag\">container</span>", "desc": "Detiene la ejecución de un contenedor activo." },
+        { "cmd": "docker start <span class=\"cmd-flag\">container</span>", "desc": "Inicia un contenedor previamente detenido." },
+        { "cmd": "docker logs <span class=\"cmd-flag\">-f container</span>", "desc": "Sigue los logs en tiempo real." }
+      ]
+    },
+    {
+      "header": "🧹 4. Limpieza y Compose",
+      "items": [
+        { "cmd": "docker rm <span class=\"cmd-flag\">container</span>", "desc": "Elimina un contenedor detenido." },
+        { "cmd": "docker system prune <span class=\"cmd-flag\">-a</span>", "desc": "Elimina contenedores, redes e imágenes no utilizados." },
+        { "cmd": "docker compose up <span class=\"cmd-flag\">-d</span>", "desc": "Levanta la aplicación definida en docker-compose.yml." }
+      ]
+    }
+  ],
+  "footer": "Desarrollado para el aprendizaje continuo • <strong>sallesfx.com.br</strong>"
+}

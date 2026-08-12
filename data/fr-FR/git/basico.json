@@ -1,0 +1,41 @@
+{
+  "id": "basico",
+  "category": "git",
+  "title": "ANTI-SÈCHE GIT ET GITHUB",
+  "subtitle": "Flux de Travail Essentiel de Gestion de Versions • <span class=\"sheet-domain\">sallesfx.com.br</span>",
+  "cards": [
+    {
+      "header": "🚀 1. Initialiser et Cloner",
+      "items": [
+        { "cmd": "git init", "desc": "Initialise un nouveau dépôt Git local." },
+        { "cmd": "git clone <span class=\"cmd-flag\">url</span>", "desc": "Clone un dépôt distant existant." },
+        { "cmd": "git status", "desc": "Affiche l'état des fichiers modifiés." }
+      ]
+    },
+    {
+      "header": "📝 2. Commit et Historique",
+      "items": [
+        { "cmd": "git add <span class=\"cmd-flag\">.</span>", "desc": "Ajoute toutes les modifications à la zone de staging." },
+        { "cmd": "git commit <span class=\"cmd-flag\">-m \"msg\"</span>", "desc": "Enregistre l'instantané avec un message descriptif." },
+        { "cmd": "git log <span class=\"cmd-flag\">--oneline</span>", "desc": "Affiche l'historique des commits de façon concise." }
+      ]
+    },
+    {
+      "header": "🌿 3. Branches et Fusion",
+      "items": [
+        { "cmd": "git checkout <span class=\"cmd-flag\">-b nome</span>", "desc": "Crée une nouvelle branche et y bascule." },
+        { "cmd": "git switch <span class=\"cmd-flag\">main</span>", "desc": "Bascule vers la branche spécifiée." },
+        { "cmd": "git merge <span class=\"cmd-flag\">feature</span>", "desc": "Fusionne la branche spécifiée dans la branche courante." }
+      ]
+    },
+    {
+      "header": "🌐 4. Synchronisation Distante",
+      "items": [
+        { "cmd": "git pull <span class=\"cmd-flag\">origin main</span>", "desc": "Télécharge et fusionne les modifications du serveur distant." },
+        { "cmd": "git push <span class=\"cmd-flag\">origin main</span>", "desc": "Envoie les commits locaux vers le dépôt distant." },
+        { "cmd": "git stash", "desc": "Met les modifications de côté temporairement sans commiter." }
+      ]
+    }
+  ],
+  "footer": "Développé pour un apprentissage continu • <strong>sallesfx.com.br</strong>"
+}
